@@ -25,7 +25,7 @@ export async function fetchNui<T = unknown>(
     body: JSON.stringify(data),
   };
 
-  if (isEnvBrowser() && mockData) return mockData;
+  if (isEnvBrowser() && mockData !== undefined) return mockData;
 
   const resourceName = (window as any).GetParentResourceName
     ? (window as any).GetParentResourceName()
